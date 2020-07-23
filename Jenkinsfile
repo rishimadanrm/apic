@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+  node { label 'nodejs-apic' } 
+  } 
   environment {
     APIC_DEV_CREDS = credentials('jenkins-apic-dev-creds')
   }
