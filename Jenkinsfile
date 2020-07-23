@@ -5,6 +5,7 @@ pipeline {
   environment {
     APIC_DEV_CREDS = credentials('jenkins-apic-dev-creds')
   }
+  stages {
    stage('Login to APIC') {
       steps {
         // login
@@ -33,5 +34,5 @@ pipeline {
         sh "apic-slim products clone hello-world-product.yaml --server https://mgmt.icp-proxy.project-fidelity-uk-3cd0ec11030dfa215f262137faf739f1-0000.eu-gb.containers.appdomain.cloud --org fidelity-integration --catalog fidelity-dev"
       }
     }
-   
+  }
   }
